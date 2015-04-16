@@ -16,5 +16,5 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class TodoSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
 		model = Todo
-		fields = ('name', 'iscompleted',)
+		fields = ('id','name', 'iscompleted',)
 

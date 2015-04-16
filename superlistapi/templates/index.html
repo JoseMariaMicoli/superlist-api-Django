@@ -1,10 +1,74 @@
+{% load staticfiles %}
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>django-angular-token-auth</title>
-    </head>
 
-    <body>
-        Hello, World!
-    </body>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="{% static 'stylesheet/style.css' %}" />
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
+    <script src="http://code.angularjs.org/1.2.4/angular-route.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+    <script type="text/javascript" src="{% static 'javascript/restangular.js' %}"></script>
+    <script src="{% static 'javascript/app.js' %}"></script>
+  </head>
+
+  <body>
+  	{% verbatim %}
+    <div ng-app="todoApp">
+
+    <div class="container" ng-view></div>
+  
+  
+  
+    <!-- CACHE FILE: list.html -->
+    <script type="text/ng-template" id="list.html">
+      <table>
+        <thead>
+        <tr>
+          <th>todo</th>
+          <th>List</th>
+          <th><a href="#/new"><i class="icon-plus-sign"></i></a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="todo in todos">
+          <td>{{todo.name}}</td>
+          <td>
+            <a href="#/edit/{{todo.id.$id}}"><i class="icon-pencil"></i></a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </script>
+  
+  
+  
+    <!-- CACHE FILE: detail.html -->
+    <script type="text/ng-template" id="detail.html">
+      <form name="myForm">
+        <div class="control-group" ng-class="{error: myForm.name.$invalid}">
+          <label>Name</label>
+          <input type="text" name="name" ng-model="todo.name" required>
+          <span ng-show="myForm.name.$error.required" class="help-inline">
+              Required</span>
+        </div>
+      
+        <br>
+        <a href="#/" class="btn">Cancel</a>
+        <button ng-click="save()" ng-disabled="isClean() || myForm.$invalid"
+                class="btn btn-primary">Save</button>
+        <button ng-click="destroy()"
+                ng-show="todo.id" class="btn btn-danger">Delete</button>
+      </form>
+    </script>
+  </div>
+  {% endverbatim %}
+  </body>
+
+</html>
+
 </html>
