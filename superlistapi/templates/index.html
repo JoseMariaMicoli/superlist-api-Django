@@ -15,6 +15,7 @@
 
   <body ng-controller="TodosCtrl">
     <div class="container" ng-view>
+      <navbar></navbar>
       <div class="jumbotron">
         <h1>My Angular Django</h1>
       </div>
@@ -28,7 +29,6 @@
     </div>
     <hr>
     <div class="row">
-      <button ng-click="init()">list</button>
       <div class="col-md-4">
         <table class="table table-striped">
           <tr ng-repeat='todo in todos'>
