@@ -17,4 +17,5 @@ urlpatterns = [
     url(r'^api-token-refresh/', 'rest_framework_jwt.views.refresh_jwt_token'),
     url(r'^api-token-verify/', 'rest_framework_jwt.views.verify_jwt_token'),
     url(r'^index/', TemplateView.as_view(template_name='index.html')),
+    url(r'^docs/', include('rest_framework_swagger.urls')),
 ]
