@@ -1,0 +1,6 @@
+Django==1.8
+django-rest-swagger==0.2.9
+djangorestframework==3.1.1
+djangorestframework-jwt==1.4.0
+PyJWT==1.1.0
+PyYAML==3.11
