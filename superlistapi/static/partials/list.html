@@ -1,0 +1,14 @@
+{% verbatim %}
+<div ng-controller="TodosCtrl">
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Is Completed?</th>
+          </tr>
+          <tr ng-repeat="todo in todos">
+            <td>{{todo.name}}</td>
+            <td>{{todo.iscompleted}}</td>
+          </tr>
+        </table>
+      </div>
+      {% endverbatim %}
