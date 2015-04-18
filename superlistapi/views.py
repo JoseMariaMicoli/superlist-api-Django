@@ -9,7 +9,7 @@ from superlistapi.serializers import UserSerializer, GroupSerializer, TodoSerial
 
 class UserViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows users to be viewed or edited.
+    API endpoint that allows users to be created, viewed, edited or deleted.
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -17,11 +17,14 @@ class UserViewSet(viewsets.ModelViewSet):
 
 class GroupViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows groups to be viewed or edited.
+    API endpoint that allows groups to be created, viewed, edited or deleted.
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 
 class TodoViewSet(viewsets.ModelViewSet):
-	queryset = Todo.objects.all()
-	serializer_class = TodoSerializer
+    """
+    API endpoint that allow todos to be created, viewed, edited, or deleted.
+    """
+    queryset = Todo.objects.all()
+    serializer_class = TodoSerializer
