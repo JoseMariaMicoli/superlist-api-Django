@@ -56,5 +56,3 @@ app.controller('TodosCtrl', function($scope, $http) {
   };
  
 });
- 
- 
